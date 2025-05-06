@@ -39,8 +39,8 @@
                 </thead>
                 <tbody id="tabela" class="[&>nth-child(odd)]:bg-black/50">
                     <tr class="*:leading-[40px]">
-                        <td>Natan</td>
-                        <td>Natan@gmail.com</td>
+                        <td>Nome</td>
+                        <td>Nome@gmail.com</td>
                         <td>(00) 00000-0000</td>
                         <td>05/05/2025</td>
                         <td class="w-[100px] flex justify-center gap-4">
@@ -49,8 +49,24 @@
                         </td>
                     </tr>
                     <tr class="*:leading-[40px]">
-                        <td>Natan</td>
-                        <td>Natan@gmail.com</td>
+                        <td>Nome</td>
+                        <td>Nome@gmail.com</td>
+                        <td>(00) 00000-0000</td>
+                        <td>05/05/2025</td>
+                        <td class="w-[100px] flex justify-center gap-4">
+                            <box-icon name="pencil"></box-icon>
+                            <box-icon name="trash"></box-icon>
+                    <tr class="*:leading-[40px]">
+                        <td>Nome</td>
+                        <td>Nome@gmail.com</td>
+                        <td>(00) 00000-0000</td>
+                        <td>05/05/2025</td>
+                        <td class="w-[100px] flex justify-center gap-4">
+                            <box-icon name="pencil"></box-icon>
+                            <box-icon name="trash"></box-icon>
+                    <tr class="*:leading-[40px]">
+                        <td>Nome</td>
+                        <td>Nome@gmail.com</td>
                         <td>(00) 00000-0000</td>
                         <td>05/05/2025</td>
                         <td class="w-[100px] flex justify-center gap-4">
@@ -69,9 +85,24 @@
         <div id="gaveta" class="min-w-[350px] h-full bg-white p-4 absolute top-0 -right-full duration-200 delay-150">
             <h3 class="flex justify-between items-center">
                 Cadastro
-                <box-icon onclick="mostrarOverlay()" name="x"
+                <box-icon onclick="mostrarOverlay(event.target)" name="x"
                     class="w-[40px] h-[40px] rounded-full bg-purple-600 fill-white p-2 cursor-pointer hover:bg-slate-700 duration-200"></box-icon>
             </h3>
+            <form id="formCriar" onclick="cadastrarClientes()">
+                <label for="" class="block mb-2">Nome</label>
+                <input type="text" class="w-full h-[40px] rounded border focus:outline-pink-600 mb-3 pl-3" placeholder="Digit seu Nome" required>
+
+                <label for="" class="block mb-2">Email</label>
+                <input type="email" type="email" class="w-full h-[40px] rounded border focus:outline-pink-600 mb-3 pl-3" placeholder="Digite se email" required>
+
+                <label for="" class="block mb-2">Telefone</label>
+                <input type="telefone" type="text" class="w-full h-[40px] rounded border focus:outline-pink-600 mb-3 pl-3" placeholder="(00) 00000-0000" required>
+
+                <label for="" class="block mb-2">Última compra</label>
+                <input type="data" type="text" class="w-full h-[40px] rounded border focus:outline-pink-600 mb-3 pl-3" placeholder="05/05/2025">
+
+                <button type="submit" class="w-full bg-pink-600 leading-[40px] rounded text-white px-6 text-[12px] uppercase font-bold hover:bg-pink-700 duration-200">Criar</button>
+            </form>
         </div>
         <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
         <script src="index.js"></script>

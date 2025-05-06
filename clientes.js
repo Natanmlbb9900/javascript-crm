@@ -1,4 +1,4 @@
-let clientes = [
+let clientes = JSON.parse(sessionStorage.getItem("clientes")) [
     {
         nome: "Conrado",
         email: "conrado@gmail.com",
@@ -23,10 +23,10 @@ function carregarClientes(ListaDeClientes){
     let tbodyElement = document.querySelector("#tabela")
     ListaDeClientes.map((clientes) => {
         tbodyElement.innerHTML += `<tr class="*:leading-[40px]">
-                        <td></td>
-                        <td>Natan@gmail.com</td>
-                        <td>(00) 00000-0000</td>
-                        <td>05/05/2025</td>
+                        <td>${cliente.nome}</td>
+                        <td>${cliente.email}</td>
+                        <td>${cliente.telefone}</td>
+                        <td>${cliente.data}</td>
                         <td class="w-[100px] flex justify-center gap-4">
                             <box-icon name="pencil"></box-icon>
                             <box-icon name="trash"></box-icon>
@@ -36,4 +36,14 @@ function carregarClientes(ListaDeClientes){
     })
 }
 
-carregarClientes(clientes)
+carregarClientes(clientes);
+
+function cadastrarClientes(form){
+    event.preventDefault();
+     console.log(form);
+
+     let formData = new FormData(form);
+     let dados = object.fromEntries(formData.entries);
+     console.log(dados);
+     clientes.push(clientes);
+}
